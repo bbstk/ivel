@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+    <h1>Name and logo(?)</h2>
+    <p> Description and contact <p>
+    <form action="/enquiry/add" method="post">
+    {% csrf_token %}
+    <label>Name: </label>
+    <input type="text" id="name" name="name"/>
+    <label>Email: </label>
+    <input type="text" id="email" name="email"/>
+    <label>Phone No: </label>
+    <input type="text" id="phone" name="phone"/>
+    <label>Location: </label>
+    <input type="text" id="location" name="location"/>
+    <label>Description: </label>
+    <input type="text" id="description" name="description" size="15"/>
+    <!-- Category input?? -->
+    <input type="submit" value="Submit">
+    </body>
+</html>
