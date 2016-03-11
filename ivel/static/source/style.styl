@@ -1,0 +1,140 @@
+// colours
+
+// mixins
+
+title = 30px Oswald
+text = 14px Raleway
+
+flex()
+	-webkit-display flex
+	-ms-display flex
+	display flex
+align(n)
+	-webkit-align-items n
+	align-items n
+direction(n)
+	-webkit-flex-direction n
+	-ms-flex-direction n
+	flex-direction n
+content(n)
+	-webkit-justify-content n
+	justify-content n
+wrap()
+	-webkit-flex-wrap wrap
+	flex-wrap wrap
+	
+border-box(arg)
+	-webkit-box-sizing border-box
+	-moz-box-sizing border-box
+	box-sizing border-box
+	padding arg
+
+
+transition(arg)
+	-webkit-transition arg
+	-moz-transition arg
+	-o-transition arg
+	transition arg
+
+transform(arg)
+	-webkit-transform arg
+	-moz-transform arg
+	-o-transform arg
+	-ms-transform arg
+	transform arg
+
+// general
+
+body
+	background #222
+
+// specific
+
+header
+	border-box(30px 50px)
+	h1
+		color white
+		font title
+		font-weight bold
+main
+	border-box(50px)
+	background skyblue
+	flex()
+	direction column
+	align center
+	box-shadow 0 0 10px black
+	p
+		color white
+		font text
+		font-size 2rem
+	form
+		flex()
+		content center
+		wrap()
+		max-width: 960px
+		fieldset
+			border none
+			flex()
+			margin 0
+			padding 0
+			input, textarea
+				border-box(10px 20px)
+				border 1px solid transparent
+				border-radius 3px
+				color #555
+				font text
+				font-weight bold
+				margin: 10px
+				outline none
+				&:hover, &:focus
+					background white
+					box-shadow 0 0 10px darken(skyblue, 40)
+					border 1px solid darken(skyblue, 30)
+		fieldset.description
+			height 190px
+			margin 0 0 0 20px
+			width 450px
+			textarea
+				resize none
+				height 100%
+				margin 10px auto
+				width 100%
+		section
+			margin 30px 0 0 0 
+			width 100%
+			button
+				background lighten(skyblue, 15)
+				border-box(10px 20px)
+				border 1px solid transparent
+				border-radius 0
+				color #555
+				font text
+				font-weight bold
+				float right
+				outline none
+				text-transform uppercase
+				&:hover, &:focus
+						box-shadow 0 0 10px darken(skyblue, 40)
+						border 1px solid darken(skyblue, 30)
+
+// media
+@media (max-width: 827px)
+	main
+		form
+			width 100%
+			fieldset
+				input
+					margin 10px 0
+			fieldset.description
+				width 300px
+
+@media (max-width: 660px)
+	main
+		form
+			fieldset
+				width 100%
+				input
+					width 100%
+			fieldset.description
+				margin 0
+				width 660px

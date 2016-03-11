@@ -1,0 +1,133 @@
+body {
+  background: #222;
+}
+header {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 30px 50px;
+}
+header h1 {
+  color: #fff;
+  font: 30px Oswald;
+  font-weight: bold;
+}
+main {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 50px;
+  background: #87ceeb;
+  -webkit-display: flex;
+  -ms-display: flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  box-shadow: 0 0 10px #000;
+}
+main p {
+  color: #fff;
+  font: 14px Raleway;
+  font-size: 2rem;
+}
+main form {
+  -webkit-display: flex;
+  -ms-display: flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 960px;
+}
+main form fieldset {
+  border: none;
+  -webkit-display: flex;
+  -ms-display: flex;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+main form fieldset input,
+main form fieldset textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: #555;
+  font: 14px Raleway;
+  font-weight: bold;
+  margin: 10px;
+  outline: none;
+}
+main form fieldset input:hover,
+main form fieldset textarea:hover,
+main form fieldset input:focus,
+main form fieldset textarea:focus {
+  background: #fff;
+  box-shadow: 0 0 10px #186c8e;
+  border: 1px solid #1f8dba;
+}
+main form fieldset.description {
+  height: 190px;
+  margin: 0 0 0 20px;
+  width: 450px;
+}
+main form fieldset.description textarea {
+  resize: none;
+  height: 100%;
+  margin: 10px auto;
+  width: 100%;
+}
+main form section {
+  margin: 30px 0 0 0;
+  width: 100%;
+}
+main form section button {
+  background: #c9e9f6;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: #555;
+  font: 14px Raleway;
+  font-weight: bold;
+  float: right;
+  outline: none;
+  text-transform: uppercase;
+}
+main form section button:hover,
+main form section button:focus {
+  box-shadow: 0 0 10px #186c8e;
+  border: 1px solid #1f8dba;
+}
+@media (max-width: 827px) {
+  main form {
+    width: 100%;
+  }
+  main form fieldset input {
+    margin: 10px 0;
+  }
+  main form fieldset.description {
+    width: 300px;
+  }
+}
+@media (max-width: 660px) {
+  main form fieldset {
+    width: 100%;
+  }
+  main form fieldset input {
+    width: 100%;
+  }
+  main form fieldset.description {
+    margin: 0;
+    width: 660px;
+  }
+}
