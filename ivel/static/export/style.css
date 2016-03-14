@@ -18,7 +18,20 @@ body {
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
 }
+.camera-container .circle .top {
+  background-image: url("top.png");
+  background-repeat: no-repeat;
+  background-postion: center;
+  background-size: contain;
+  height: 50px;
+  width: 84px;
+  z-index: 2;
+  position: absolute;
+  top: -10px;
+  left: -7px;
+}
 .camera-container .circle .camera-eye {
+  animation: camera 3s infinite linear;
   background: linear-gradient(45deg, #222, #444 30%, #444 35%, #222);
   border-radius: 50%;
   height: 42px;
