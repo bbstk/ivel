@@ -27,7 +27,31 @@
 				</figure>
 			</div>
 		</header>
-			<!-- <section class="info">
+		<main>
+			<section class="contacts">
+				<p>Make a request</p>
+				<form action="/enquiry/add" method="post">
+					{% csrf_token %}
+					<fieldset>
+						<!-- <label for="name">Name: </label> -->
+						<input type="text" id="name" name="name" placeholder="Name" required />
+						<!-- <label for="email">Email: </label> -->
+						<input type="email" id="email" name="email" placeholder="Email" required />
+						<!-- <label for="phone">Phone No: </label> -->
+						<input type="text" id="phone" name="phone" placeholder="Phone" required />
+						<!-- <label for="location">Location: </label> -->
+						<input type="text" id="location" name="location" placeholder="Location" required />
+					</fieldset>
+						<!-- <label for="description">Description: </label> -->
+					<fieldset class="description">
+						<textarea type="text" id="description" name="description" size="15" placeholder="Description" required ></textarea>
+					</fieldset>
+					<section>
+						<button type="submit">Send</button>
+					</section>
+				</form>
+			</section>
+			<section class="info">
 				<article>
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequa
 				</article>
@@ -38,29 +62,6 @@
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequa
 				</article>
 			</section>
-			-->
-		<main>
-			<p>Send a request</p>
-			<form action="/enquiry/add" method="post">
-				{% csrf_token %}
-				<fieldset>
-					<!-- <label for="name">Name: </label> -->
-					<input type="text" id="name" name="name" placeholder="Name" required />
-					<!-- <label for="email">Email: </label> -->
-					<input type="email" id="email" name="email" placeholder="Email" required />
-					<!-- <label for="phone">Phone No: </label> -->
-					<input type="text" id="phone" name="phone" placeholder="Phone" required />
-					<!-- <label for="location">Location: </label> -->
-					<input type="text" id="location" name="location" placeholder="Location" required />
-				</fieldset>
-					<!-- <label for="description">Description: </label> -->
-				<fieldset class="description">
-					<textarea type="text" id="description" name="description" size="15" placeholder="Description" required ></textarea>
-				</fieldset>
-				<section>
-					<button type="submit">Send</button>
-				</section>
-			</form>
 		</main>
 	</body>
 </html>

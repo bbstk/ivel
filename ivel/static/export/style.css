@@ -11,7 +11,7 @@ body {
   justify-content: center;
   background: radial-gradient(circle at 50% 120%, #bbb, #fff 80%, #000 100%);
   border-radius: 50%;
-  box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 10px #000;
   height: 70px;
   width: 70px;
   perspective: 1000px;
@@ -27,11 +27,11 @@ body {
   width: 84px;
   z-index: 2;
   position: absolute;
-  top: -10px;
+  top: -12px;
   left: -7px;
 }
 .camera-container .circle .camera-eye {
-  animation: camera 3s infinite linear;
+  animation: camera 10s infinite linear;
   background: linear-gradient(45deg, #222, #444 30%, #444 35%, #222);
   border-radius: 50%;
   height: 42px;
@@ -56,8 +56,8 @@ body {
   width: 42px;
 }
 .camera-container .circle .camera-eye .inner-eye .yacircle {
-  animation: colour 3.5s infinite linear;
-  border: 2px solid #93d3ed;
+  animation: colour 4.5s infinite linear;
+  border: 3px dotted #93d3ed;
   border-radius: 50%;
   height: 20px;
   width: 20px;
@@ -80,18 +80,7 @@ header h1 {
   font: 30px Oswald;
   font-weight: bold;
 }
-/* section.info
-	border-box(50px)
-	flex()
-	direction row
-	color #ccc
-	font text
-	margin 0 auto
-	max-width 1100px
-	article
-		margin 30px
-*/
-main {
+section.contacts {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -107,12 +96,12 @@ main {
   align-items: center;
   box-shadow: 0 0 10px #000;
 }
-main p {
+section.contacts p {
   color: #fff;
   font: 14px Raleway;
   font-size: 2rem;
 }
-main form {
+section.contacts form {
   -webkit-display: flex;
   -ms-display: flex;
   display: flex;
@@ -122,7 +111,7 @@ main form {
   flex-wrap: wrap;
   max-width: 960px;
 }
-main form fieldset {
+section.contacts form fieldset {
   border: none;
   -webkit-display: flex;
   -ms-display: flex;
@@ -130,8 +119,8 @@ main form fieldset {
   margin: 0;
   padding: 0;
 }
-main form fieldset input,
-main form fieldset textarea {
+section.contacts form fieldset input,
+section.contacts form fieldset textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -144,30 +133,30 @@ main form fieldset textarea {
   margin: 10px;
   outline: none;
 }
-main form fieldset input:hover,
-main form fieldset textarea:hover,
-main form fieldset input:focus,
-main form fieldset textarea:focus {
+section.contacts form fieldset input:hover,
+section.contacts form fieldset textarea:hover,
+section.contacts form fieldset input:focus,
+section.contacts form fieldset textarea:focus {
   background: #fff;
   box-shadow: 0 0 10px #186c8e;
   border: 1px solid #1f8dba;
 }
-main form fieldset.description {
+section.contacts form fieldset.description {
   height: 190px;
   margin: 0 0 0 20px;
   width: 450px;
 }
-main form fieldset.description textarea {
+section.contacts form fieldset.description textarea {
   resize: none;
   height: 100%;
   margin: 10px auto;
   width: 100%;
 }
-main form section {
+section.contacts form section {
   margin: 30px 0 0 0;
   width: 100%;
 }
-main form section button {
+section.contacts form section button {
   background: #c9e9f6;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -182,10 +171,29 @@ main form section button {
   outline: none;
   text-transform: uppercase;
 }
-main form section button:hover,
-main form section button:focus {
+section.contacts form section button:hover,
+section.contacts form section button:focus {
   box-shadow: 0 0 10px #186c8e;
   border: 1px solid #1f8dba;
+}
+section.info {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 50px;
+  -webkit-display: flex;
+  -ms-display: flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  color: #ccc;
+  font: 14px Raleway;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+section.info article {
+  margin: 30px;
 }
 @media (max-width: 827px) {
   main form {
@@ -210,150 +218,70 @@ main form section button:focus {
     width: 660px;
   }
 }
-@-moz-keyframes turn {
-  0% {
-    transform: rotateY(-25deg) rotateX(-20deg);
-  }
-  40% {
-    transform: rotateY(2deg) rotateX(0);
-  }
-  100% {
-    transform: rotateY(2deg) rotateX(0);
-  }
-}
-@-webkit-keyframes turn {
-  0% {
-    transform: rotateY(-25deg) rotateX(-20deg);
-  }
-  40% {
-    transform: rotateY(2deg) rotateX(0);
-  }
-  100% {
-    transform: rotateY(2deg) rotateX(0);
-  }
-}
-@-o-keyframes turn {
-  0% {
-    transform: rotateY(-25deg) rotateX(-20deg);
-  }
-  40% {
-    transform: rotateY(2deg) rotateX(0);
-  }
-  100% {
-    transform: rotateY(2deg) rotateX(0);
-  }
-}
-@keyframes turn {
-  0% {
-    transform: rotateY(-25deg) rotateX(-20deg);
-  }
-  40% {
-    transform: rotateY(2deg) rotateX(0);
-  }
-  100% {
-    transform: rotateY(2deg) rotateX(0);
-  }
-}
 @-moz-keyframes colour {
   0% {
-    background: linear-gradient(#f00, #000);
-    border: 2px solid #93d3ed;
+    border: 3px dotted #93d3ed;
   }
   65% {
-    border: 2px solid #93d3ed;
+    border: 3px dotted #93d3ed;
   }
   68% {
-    border: 2px solid #f00;
+    border: 3px dotted #f00;
   }
   75% {
-    border: 2px solid #93d3ed;
+    border: 3px dotted #93d3ed;
   }
 }
 @-webkit-keyframes colour {
   0% {
-    background: linear-gradient(#f00, #000);
-    border: 2px solid #93d3ed;
+    border: 3px dotted #93d3ed;
   }
   65% {
-    border: 2px solid #93d3ed;
+    border: 3px dotted #93d3ed;
   }
   68% {
-    border: 2px solid #f00;
+    border: 3px dotted #f00;
   }
   75% {
-    border: 2px solid #93d3ed;
+    border: 3px dotted #93d3ed;
   }
 }
 @-o-keyframes colour {
   0% {
-    background: linear-gradient(#f00, #000);
-    border: 2px solid #93d3ed;
+    border: 3px dotted #93d3ed;
   }
   65% {
-    border: 2px solid #93d3ed;
+    border: 3px dotted #93d3ed;
   }
   68% {
-    border: 2px solid #f00;
+    border: 3px dotted #f00;
   }
   75% {
-    border: 2px solid #93d3ed;
+    border: 3px dotted #93d3ed;
   }
 }
 @keyframes colour {
   0% {
-    background: linear-gradient(#f00, #000);
-    border: 2px solid #93d3ed;
+    border: 3px dotted #93d3ed;
   }
   65% {
-    border: 2px solid #93d3ed;
+    border: 3px dotted #93d3ed;
   }
   68% {
-    border: 2px solid #f00;
+    border: 3px dotted #f00;
   }
   75% {
-    border: 2px solid #93d3ed;
-  }
-}
-@-moz-keyframes scanner {
-  0% {
-    background: linear-gradient(#000, #fff);
-  }
-  100% {
-    background: linear-gradient(#fff, #000);
-  }
-}
-@-webkit-keyframes scanner {
-  0% {
-    background: linear-gradient(#000, #fff);
-  }
-  100% {
-    background: linear-gradient(#fff, #000);
-  }
-}
-@-o-keyframes scanner {
-  0% {
-    background: linear-gradient(#000, #fff);
-  }
-  100% {
-    background: linear-gradient(#fff, #000);
-  }
-}
-@keyframes scanner {
-  0% {
-    background: linear-gradient(#000, #fff);
-  }
-  100% {
-    background: linear-gradient(#fff, #000);
+    border: 3px dotted #93d3ed;
   }
 }
 @-moz-keyframes camera {
   0% {
     transform: none;
   }
-  50% {
+  30% {
     transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
   }
-  75% {
+  65% {
     transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
   }
   90% {
@@ -364,10 +292,10 @@ main form section button:focus {
   0% {
     transform: none;
   }
-  50% {
+  30% {
     transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
   }
-  75% {
+  65% {
     transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
   }
   90% {
@@ -378,10 +306,10 @@ main form section button:focus {
   0% {
     transform: none;
   }
-  50% {
+  30% {
     transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
   }
-  75% {
+  65% {
     transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
   }
   90% {
@@ -392,13 +320,69 @@ main form section button:focus {
   0% {
     transform: none;
   }
-  50% {
+  30% {
     transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
   }
-  75% {
+  65% {
     transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
   }
   90% {
+    transform: none;
+  }
+}
+@-moz-keyframes cam {
+  0% {
+    transform: none;
+  }
+  50% {
+    transfrom: translateX(-42px) translateY(-50px) skewX(-25deg) skewY(3deg) scale(0.8);
+  }
+  75% {
+    transfrom: translateX(-42px) translateY(-50px) skewX(-25deg) skewY(3deg) scale(0.8);
+  }
+  95% {
+    transform: none;
+  }
+}
+@-webkit-keyframes cam {
+  0% {
+    transform: none;
+  }
+  50% {
+    transfrom: translateX(-42px) translateY(-50px) skewX(-25deg) skewY(3deg) scale(0.8);
+  }
+  75% {
+    transfrom: translateX(-42px) translateY(-50px) skewX(-25deg) skewY(3deg) scale(0.8);
+  }
+  95% {
+    transform: none;
+  }
+}
+@-o-keyframes cam {
+  0% {
+    transform: none;
+  }
+  50% {
+    transfrom: translateX(-42px) translateY(-50px) skewX(-25deg) skewY(3deg) scale(0.8);
+  }
+  75% {
+    transfrom: translateX(-42px) translateY(-50px) skewX(-25deg) skewY(3deg) scale(0.8);
+  }
+  95% {
+    transform: none;
+  }
+}
+@keyframes cam {
+  0% {
+    transform: none;
+  }
+  50% {
+    transfrom: translateX(-42px) translateY(-50px) skewX(-25deg) skewY(3deg) scale(0.8);
+  }
+  75% {
+    transfrom: translateX(-42px) translateY(-50px) skewX(-25deg) skewY(3deg) scale(0.8);
+  }
+  95% {
     transform: none;
   }
 }
