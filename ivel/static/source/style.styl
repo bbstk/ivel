@@ -55,116 +55,75 @@ body
 	}
 }
 
-@keyframes expand
-	0%
-		background: radial-gradient(circle, #111, rgba(255, 255, 255, 0.5) 80%);
-	60%
-		background: radial-gradient(circle, #111, rgba(255, 255, 255, 0.5) 80%);
-	62%
-		background: radial-gradient(circle, white, rgba(255, 255, 255, 0.5) 80%);
-	78%
-		background: radial-gradient(circle, #111, rgba(255, 255, 255, 0.5) 80%);
-
 @keyframes colour
 	0%
-		border 1px solid lighten(skyblue, 10%)
-	70%
-		border 1px solid lighten(skyblue, 10%)
-	72%
-		border 1px solid red
+		background linear-gradient(red, black)
+		border 2px solid lighten(skyblue, 10%)
+	65%
+		border 2px solid lighten(skyblue, 10%)
+	68%
+		border 2px solid red
 	75%
-		border 1px solid lighten(skyblue, 10%)
+		border 2px solid lighten(skyblue, 10%)
+
+@keyframes scanner
+	0%
+		background linear-gradient(black, white)
+	100%
+		background linear-gradient(white, black)
+
+
+@keyframes camera
+	0%
+		transform none
+	50%
+		transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
+	75%
+		transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
+	90%
+		transform none
 
 .camera-container
-	height 100px
-	width 100px
-	margin 30px
-	position relative
-	perspective 300px
-	.cube
-		animation: turn 1s alternate 2 linear;
-		position: relative;
-		width: 75px;
-		transform rotate3d(20deg)
+	.circle
+		flex()
+		align center
+		just-content center
+		background: radial-gradient(circle at 50% 120%,  #bbb, white 80%, #000000 100%)
+		border-radius: 50%;
+		box-shadow 0 0 5px black
+		height: 70px;
+		width: 70px;
+		perspective 1000px
+		perspective-origin 50% 50%
 		transform-style: preserve-3d;
-		transform: rotateY(-25deg) rotateX(-20deg);
-		top 30%
-		figure
-			color white
-			margin: 0;
-			width: 50px;
-			height: 50px;
-			display: block;
-			position: absolute;
-		.left, .right
-			width: 75px
-			height 30px
-		.top, .bottom
-			height 75px
-		.back
-			background #999
-			height 30px
-		.right {
-			background linear-gradient(45deg, white, #333)
-			transform: rotateY(-270deg) translateZ(-75px);
-			transform-origin: top right;
-		}
-		.left {
-			background linear-gradient(-50deg, white, lighten(skyblue, 60%), #999)
-			transform: rotateY(270deg) translateZ(-50px);
-			transform-origin: left;
-		}
-		.top
-			background linear-gradient(110deg, #999, lighten(skyblue, 70%), white)
-			transform: translateZ(75px) rotateX(-90deg);
-			transform-origin: top;
-			/* &:before
-				content " "
-				background linear-gradient(90deg, #333, #ccc 60%, #555)
-				display block
-				height 40px
-				width 8px
-				
-				position absolute
-				top: -40px
-				left 21px
-			*/
-		.bottom
-			background linear-gradient(180deg, #ddd, #777)
-			transform: rotateX(-90deg) translateZ(-45px);
-			transform-origin: bottom;
-		.front
-			flex()
-			just-content center
-			align center
-			background linear-gradient(-70deg, white, lighten(skyblue, 50%), white)
-			height 30px
-			transform translateZ(75px)
-			.camera-eye
+		
+		.camera-eye
+			// animation camera 3s infinite linear
+			background: linear-gradient(45deg, #222, #444 30%, #444 35%, #222);
+			border-radius 50%
+			height 42px
+			margin 10px 0 0 0
+			width 42px
+			
+			position absolute
+			left 14px
+			top 14px
+			.inner-eye
 				flex()
 				just-content center
 				align center
-				background: linear-gradient(45deg, #222, #444 30%, #444 35%, #222);
-				border: 1px solid #222
-				border-radius 3px
-				height 20px
-				width 30px
-				.inner-eye
-					flex()
-					just-content center
-					align center
-					animation expand 1.5s 1 linear
-					background: radial-gradient(circle, #111, rgba(255, 255, 255, 0.7) 90%);
+				animation expand 1.5s 1 linear
+				background: radial-gradient(circle, #111 30%, rgba(255, 255, 255, 0.7));
+				border-radius 50%
+				height 42px
+				width 42px
+				.yacircle
+					animation colour 3.5s infinite linear
+					// background linear-gradient(black, white 10%, black 13%, black)
+					border 2px solid lighten(skyblue, 10%)
 					border-radius 50%
-					height 16px
-					width 16px
-					.yacircle
-						animation colour 1.5s 1 linear
-						background transparent
-						border 1px solid lighten(skyblue, 10%)
-						border-radius 50%
-						height 12px
-						width 12px
+					height 20px
+					width 20px
 
 header
 	border-box(30px 50px)
@@ -175,6 +134,17 @@ header
 		color white
 		font title
 		font-weight bold
+/* section.info
+	border-box(50px)
+	flex()
+	direction row
+	color #ccc
+	font text
+	margin 0 auto
+	max-width 1100px
+	article
+		margin 30px
+*/
 main
 	border-box(50px)
 	background skyblue

@@ -18,6 +18,13 @@ gulp.task('stylus', function() {
 });
 
 
+// process images
+gulp.task('image', function() {
+	gulp.src('source/*png')
+		.pipe(gulp.dest('export'));
+});
+
+
 // what to watch for
 gulp.task('watch', function() {
     gulp.watch('source/*.styl', ['stylus']);
@@ -29,6 +36,7 @@ gulp.task('default', function() {
 	gulp.start([
 		'dependencies',
         'stylus',
+		'image',
 		'watch'
 	]);
 });
