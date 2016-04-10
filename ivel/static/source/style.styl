@@ -2,12 +2,18 @@
 
 // mixins
 
-title = 30px Oswald
-text = 14px Raleway
+title = 30px Fira Sans
+text = 14px Fira Sans
+
+animation(arg)
+	-webkit-animation arg
+	-moz-animation arg
+	o-animation arg
+	animation arg
 
 flex()
-	-webkit-display flex
-	-ms-display flex
+	display -webkit-flex
+	display -ms-flex
 	display flex
 align(n)
 	-webkit-align-items n
@@ -28,20 +34,14 @@ border-box(arg)
 	-moz-box-sizing border-box
 	box-sizing border-box
 	padding arg
-
-
+	
 transition(arg)
 	-webkit-transition arg
 	-moz-transition arg
 	-o-transition arg
 	transition arg
-
-// general
-
-body
-	background #222
-
-// specific
+	
+// keyframes
 
 @keyframes colour
 	0%
@@ -53,35 +53,104 @@ body
 	75%
 		border 3px dotted lighten(skyblue, 10%)
 
-
 @keyframes camera
 	0%
 		transform none
 	30%
-		transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
+		transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.78);
 	65%
-		transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.8);
+		transform: translateX(-12px) translateY(5px) skewX(25deg) skewY(-3deg) scale(0.78);
 	90%
 		transform none
+		
+@keyframes open
+		0%
+			transform rotateZ(0deg)
+			transform-origin left
+		10%
+			transform rotateZ(0deg)
+			transform-origin left
+		30%
+			transform rotateZ(-60deg)
+			transform-origin left
+		60%
+			transform rotateZ(0deg)
+			transform-origin left
+		100%
+			transform rotateZ(0deg)
+			transform-origin left
 
-@keyframes cam
-	0%
-		transform none
-	50%
-		transfrom translateX(-42px) translateY(-50px) skewX(-25deg) skewY(3deg) scale(0.8)
-	75%
-		transfrom translateX(-42px) translateY(-50px) skewX(-25deg) skewY(3deg) scale(0.8)
-	95%
-		transform none
+// general
+	
+main
+	section
+		border-box(50px)
+		flex()
+		align center
+		.page-container
+			margin 0 auto
+			max-width 1200px
+			h2
+				color white
+				font text
+				font-size 2rem
+			article
+				p
+					font text
+					font-size: 16px
+					line-height 1.5
+
+// specific
+
+h1, h2, h3
+	text-align center
+
+header
+	border-box(10px 50px)
+	background skyblue
+	z-index: 10
+	.container
+		flex()
+		just-content space-between
+		align center
+		max-width 1600px
+		margin 0 auto
+		h1
+			color #222
+			font title
+			font-weight bold
+			
+.barrier-container 
+	.barrier
+		height: 70px
+		position relative
+		.base
+			background darken(tomato, 20)
+			box-shadow -3px -3px 10px #888
+			border-radius 5px 5px 0 0 
+			height 55px
+			width 30px
+		.moving
+			animation(open 20s infinite)
+			background pink
+			border-radius:  3px;
+			background: #ccc
+			box-shadow: 2px 2px 2px darken(#ccc, 60%);
+			height 10px
+			width 120px
+
+			position absolute
+			top 6px;
+			left: 20px;
 
 .camera-container
 	.circle
 		flex()
 		align center
 		just-content center
-		background: radial-gradient(circle at 50% 120%,  #bbb, white 80%, #000000 100%)
+		background: radial-gradient(circle at 50% 120%,  #ddd, white 80%, #000000 100%)
 		border-radius: 50%;
-		box-shadow 0 0 10px black
+		box-shadow 8px 8px 15px #777
 		height: 70px;
 		width: 70px;
 		perspective 1000px
@@ -92,7 +161,7 @@ body
 			background-repeat no-repeat
 			background-postion center
 			background-size contain 
-			height 50px
+			height 45px
 			width 84px
 			z-index: 2
 			
@@ -100,7 +169,7 @@ body
 			top -12px
 			left -7px
 		.camera-eye
-			animation camera 10s infinite linear
+			animation(camera 10s infinite linear)
 			background: linear-gradient(45deg, #222, #444 30%, #444 35%, #222);
 			border-radius 50%
 			height 42px
@@ -114,120 +183,188 @@ body
 				flex()
 				just-content center
 				align center
-				animation expand 1.5s 1 linear
 				background: radial-gradient(circle, #111 30%, rgba(255, 255, 255, 0.7));
 				border-radius 50%
 				height 42px
 				width 42px
 				.yacircle
-					animation colour 4.5s infinite linear
+					animation colour 3s infinite linear
 					border 3px dotted lighten(skyblue, 10%)
 					border-radius 50%
 					height 20px
 					width 20px
 
-header
-	border-box(30px 50px)
-	flex()
-	just-content space-between
-	align center
-	h1
-		color white
-		font title
-		font-weight bold
-
-section.contacts
-	border-box(50px)
-	background skyblue
-	flex()
-	direction column
-	align center
-	box-shadow 0 0 10px black
-	p
-		color white
-		font text
-		font-size 2rem
-	form
-		flex()
-		just-content center
-		wrap()
-		max-width: 960px
-		fieldset
-			border none
-			flex()
-			margin 0
-			padding 0
-			input, textarea
-				border-box(10px 20px)
-				border 1px solid transparent
-				border-radius 3px
-				color #555
-				font text
-				font-weight bold
-				margin: 10px
-				outline none
-				&:hover, &:focus
-					background white
-					box-shadow 0 0 10px darken(skyblue, 40)
-					border 1px solid darken(skyblue, 30)
-		fieldset.description
-			height 190px
-			margin 0 0 0 20px
-			width 450px
-			textarea
-				resize none
-				height 100%
-				margin 10px auto
-				width 100%
-		section
-			margin 30px 0 0 0 
-			width 100%
-			button
-				background lighten(skyblue, 15)
-				border-box(10px 20px)
-				border 1px solid transparent
-				border-radius 0
-				color #555
-				font text
-				font-weight bold
-				float right
-				outline none
-				text-transform uppercase
-				&:hover, &:focus
-						box-shadow 0 0 10px darken(skyblue, 40)
-						border 1px solid darken(skyblue, 30)
+// index.html
 
 section.info
-	border-box(50px)
-	flex()
-	direction row
-	color #ccc
-	font text
-	margin 0 auto
-	max-width 1100px
+	background white
+	box-shadow 0 0 10px #999
+	h = 100vh
+	min = 112px
+	min-height "calc(%s - %s)" % (h min)
+	.page-container
+		flex()
+		direction row
+		color #999
+		font text
+		margin 0 auto
 	article
-		margin 30px
-		
+		flex()
+		direction column
+		align center
+		margin 50px
+		h3
+			color #555
+			font-size: 24px
+			text-align center
+		p
+			
+			font-size: 16px
+			line-height 1.5
+			
+			// if the text is long it is better to be left-aligned
+			text-align center
+
+section.contacts
+	background #222
+	box-shadow 0 0 10px #999
+	min-height 100vh
+	.page-container
+		flex()
+		direction column
+		align center
+		article
+			p
+				color white
+				margin 40px 10px
+				span 
+					font-weight 700
+	
+
+section.request
+	border-box(50px)
+	box-shadow 0 0 10px black
+	background skyblue
+	min-height 100vh
+	.page-container
+		flex()
+		direction column
+		align center
+		h2
+			color white
+			font text
+			font-size 2rem
+		form
+			flex()
+			just-content center
+			wrap()
+			max-width: 960px
+			fieldset
+				border none
+				flex()
+				direction column
+				margin 0
+				padding 0
+				input, textarea
+					border-box(10px 20px)
+					border 1px solid transparent
+					border-radius 3px
+					color #555
+					font text
+					font-weight bold
+					margin: 10px
+					outline none
+					&:hover, &:focus
+						background white
+						box-shadow 0 0 10px darken(skyblue, 40)
+						border 1px solid darken(skyblue, 30)
+			fieldset.description
+				height 240px
+				margin 0 0 0 20px
+				width 450px
+				textarea
+					resize none
+					height 100%
+					margin 10px auto
+					width 100%
+			section
+				margin 30px 0 0 0 
+				width 100%
+				button
+					background lighten(skyblue, 15)
+					border-box(10px 20px)
+					border 1px solid transparent
+					border-radius 0
+					color #555
+					font text
+					font-weight bold
+					float right
+					outline none
+					text-transform uppercase
+					&:hover, &:focus
+							box-shadow 0 0 10px darken(skyblue, 40)
+							border 1px solid darken(skyblue, 30)
+
+// add.html
+
+.add
+	background #222
+	h = 100vh
+	min = 112px
+	min-height "calc(%s - %s)" % (h min)
+	article
+		color white
 
 // media
 
-@media (max-width: 827px)
+
+@media (max-width: 1200px)
 	main
-		form
-			width 100%
-			fieldset
-				input
-					margin 10px 0
-			fieldset.description
-				width 300px
+		.info
+			.page-container
+				article
+					max-width 600px
+					margin 30px
+
+@media (max-width: 960px)
+	main
+		.info
+			.page-container
+				direction column
+				article
+					max-width 600px
+					margin 30px auto
+
+@media (max-width: 840px)
+	main
+		.request
+			form
+				width 100%
+				fieldset
+					max-width 300px
+					input
+						width 100%
+				fieldset.description
+					width 300px
 
 @media (max-width: 660px)
+	header
+		padding 0
+		.container
+			h1
+				font-size 25px 
+				padding 10px 0 0 30px
 	main
-		form
-			fieldset
-				width 100%
-				input
-					width 100%
-			fieldset.description
-				margin 0
-				width 660px
+		.info
+			padding 30px
+		.request
+			padding: 30px
+			.page-container
+				form
+					fieldset
+						max-width: 300px
+						width 100%
+						input
+							margin: 10px 0
+					fieldset.description
+						margin 0

@@ -1,6 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <body>
-    <p>{{ name }}</p>
-    </body>
+	<head>
+		<meta charset="utf-8" />
+		<!-- desription -->
+		<meta name="description" content="Description" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		{% load static from staticfiles %}
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static 'normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static 'style.css' %}" />
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+		<link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Raleway:400,700,500' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<h1>Companys name</h1>
+				<div class="camera-container">
+					<figure class="circle">
+						<div class="top"></div>
+						<div class="camera-eye">
+							<div class="inner-eye">
+								<div class="yacircle"></div>
+							</div>
+						</div>
+					</figure>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section class="add">
+				<div class="page-container">
+					<article>
+						<h2>Request</h2>
+						{% for enquiry in enquiries %}
+						<p>{{ new_enquiry.name }}</p>
+						<p>{{ new_enquiry.email }}</p>
+						<p>{{ new_enquiry.phone }}</p>
+						<p>{{ new_enquiry.location }}</p>
+						<p>{{ new_enquiry.description }}</p>
+						<p>Thank you for sending us a request. We will get back to you as soon as possible.</p>
+						{% endfor %}
+					</article>
+				</div>
+			</section>
+		</main>
+	</body>
 </html>

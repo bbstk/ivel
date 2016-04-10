@@ -11,56 +11,93 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="{% static 'style.css' %}" />
 
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-		<link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Raleway:400,700,500' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<header>
-			<h1>Ivel logo</h2>
-			<div class="camera-container">
-				<figure class="circle">
-					<div class="top"></div>
-					<div class="camera-eye">
-						<div class="inner-eye">
-							<div class="yacircle"></div>
+			<div class="container">
+				<h1>Имеиме</h1>
+				<!-- the securuty camera in the header
+				<div class="camera-container">
+					<figure class="circle">
+						<div class="top"></div>
+						<div class="camera-eye">
+							<div class="inner-eye">
+								<div class="yacircle"></div>
+							</div>
 						</div>
-					</div>
-				</figure>
+					</figure>
+				</div>
+				-->
 			</div>
 		</header>
 		<main>
-			<section class="contacts">
-				<p>Make a request</p>
-				<form action="/enquiry/add" method="post">
-					{% csrf_token %}
-					<fieldset>
-						<!-- <label for="name">Name: </label> -->
-						<input type="text" id="name" name="name" placeholder="Name" required />
-						<!-- <label for="email">Email: </label> -->
-						<input type="email" id="email" name="email" placeholder="Email" required />
-						<!-- <label for="phone">Phone No: </label> -->
-						<input type="text" id="phone" name="phone" placeholder="Phone" required />
-						<!-- <label for="location">Location: </label> -->
-						<input type="text" id="location" name="location" placeholder="Location" required />
-					</fieldset>
-						<!-- <label for="description">Description: </label> -->
-					<fieldset class="description">
-						<textarea type="text" id="description" name="description" size="15" placeholder="Description" required ></textarea>
-					</fieldset>
-					<section>
-						<button type="submit">Send</button>
-					</section>
-				</form>
-			</section>
 			<section class="info">
-				<article>
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequa
-				</article>
-				<article>
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequa
-				</article>
-				<article>
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequa
-				</article>
+				<div class="page-container">
+					<article>
+						<h3>Автоматични врати</h3>
+						<p>Экз рыбюм жямиляквюы нам. Но пэркйпет квюаэчтио дйжпютандо нам, ажжюм инимёкюж нык ут, ан ныморэ альиквуандо рэформйданч дуо. Прё ан пырикульа квюаырэндум, лебыр орнатюс зыд ат, мэльиорэ азжюывырит.</p>
+					</article>
+					<article>
+						<div class="barrier-container">
+							<figure class="barrier">
+								<div class="base"></div>
+								<div class="moving"></div>
+							</figure>
+						</div>
+						<h3>Бариери</h3>
+						<p>На ныморэ альиквуандо рэформйданч дуо. Прё ан пырикульа квюаырэндум, лебыр орнатюс зыд ат, мэльиорэ азжюывырит прё ут. Ыам аккюмзан индоктум ад. Лебыр мюндй ючю ад, граэко дэтракто лобортис пэр ад. Аюдиам обльйквюэ вэртырэм экз про, экз алёэнюм дёзсэнтёаш зюжкепиантюр мыа.</p>
+					</article>
+					<article>
+						<div class="camera-container">
+							<figure class="circle">
+								<div class="top"></div>
+								<div class="camera-eye">
+									<div class="inner-eye">
+										<div class="yacircle"></div>
+									</div>
+								</div>
+							</figure>
+						</div>
+						<h3>Видеонаблюдение</h3>
+						<p>Граэкы дэниквюы позтюлант но кюм, нам экз ыкчпэтында аккоммодары, зыд ыт мыис латины. Ат долорэм форынчйбюж еюж. Порро конжтетуто зэнтынтиаэ эю ючю, квуй ут дольор дыфяниэбаж. Нэ шэа факэр юрбанйтаж.</p>
+					</article>
+				</div>
+			</section>
+			<section class="contacts">
+				<div class="page-container">
+					<h2>Свържете се с нас</h2>
+					<article>
+						<p><span>Телефон:</span> +359 878 567 343 2</p>
+						<p><span>Email:</span> contacts@example.com</p>
+						<p><span>Адрес:</span><br />ул. Улица 4<br />Град, Държава<br />Пощенски код: 9000</p>
+					</article>
+				</div>
+			</section>
+			<section class="request">
+				<div class="page-container">
+				<h2>Форма за запитване</h2>
+					<form action="/enquiry/add" method="post">
+						{% csrf_token %}
+						<fieldset>
+							<!-- <label for="name">Name: </label> -->
+							<input type="text" id="name" name="name" placeholder="Име" required />
+							<!-- <label for="email">Email: </label> -->
+							<input type="email" id="email" name="email" placeholder="Email" required />
+							<!-- <label for="phone">Phone No: </label> -->
+							<input type="text" id="phone" name="phone" placeholder="Телефон" required />
+							<!-- <label for="location">Location: </label> -->
+							<input type="text" id="location" name="location" placeholder="Населено място" required />
+						</fieldset>
+							<!-- <label for="description">Description: </label> -->
+						<fieldset class="description">
+							<textarea type="text" id="description" name="description" size="15" placeholder="Запитване" required ></textarea>
+						</fieldset>
+						<section>
+							<button type="submit">Изпрати</button>
+						</section>
+					</form>
+				</div>
 			</section>
 		</main>
 	</body>
