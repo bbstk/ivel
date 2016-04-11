@@ -82,27 +82,27 @@ transition(arg)
 
 @keyframes open-right
 	0%
-		left 100px
+		left 120px
 	25%
-		left 140px
+		left 170px
 	50%
-		left 140px
+		left 170px
 	75% 
-		left 100px
+		left 120px
 	100% 
-		left 100px
+		left 120px
 
 @keyframes open-left
 	0%
-		left 50px
+		left 60px
 	25%
 		left 10px
 	50%
 		left 10px
 	75% 
-		left 50px
+		left 60px
 	100% 
-		left 50px
+		left 60px
 
 // general
 	
@@ -153,7 +153,7 @@ header
 		position relative
 		.base
 			background linear-gradient(90deg, darken(tomato, 25), darken(tomato, 20) 8px, tomato 25px, darken(tomato, 15) 30px, 30px, darken(tomato, 15))
-			box-shadow -3px -3px 7px #999
+			box-shadow -3px -3px 7px #000
 			border-radius 5px 5px 0 0 
 			height 60px
 			width 30px
@@ -166,7 +166,7 @@ header
 			animation(open 20s infinite)
 			border-radius:  3px;
 			background: #ccc
-			box-shadow: 2px 2px 2px darken(#ccc, 60%);
+			box-shadow: 2px 2px 2px #000;
 			height 12px
 			width 120px
 
@@ -187,7 +187,7 @@ header
 		just-content center
 		background: radial-gradient(circle at 50% 120%,  #ddd, white 80%, #000000 100%)
 		border-radius: 50%;
-		box-shadow 8px 8px 15px #777
+		box-shadow 8px 8px 15px #000
 		height: 70px;
 		width: 70px;
 		perspective 1000px
@@ -234,21 +234,21 @@ header
 .door-container
 	.door
 		flex()
-		box-shadow -8px -8px 15px #ddd
+		box-shadow -8px -8px 15px #000
 		height 70px
 		position relative
 		left 0
-		width 210px
+		width 240px
 		.sensor
 			flex()
 			align center
 			just-content center
-			background #222
+			background #999
 			border-radius 0 0 9px 9px
 			height 6px
 			width 16px
 			position absolute
-			left 98px
+			left 112px
 			top -8px
 		.el
 			background linear-gradient(45deg, #eee, white 25px, lighten(skyblue, 65%) 50px, white 70px)
@@ -264,19 +264,19 @@ header
 		.moving-left
 			animation(open-left 10s infinite ease)
 			border-color #bbb
-			left 50px
+			left 60px
 		.staying-right
 			background linear-gradient(45deg, lighten(skyblue, 20), white 30px, #ddd 40px, white 65px)
-			left 150px
+			left 180px
 		.moving-right
 			animation(open-right 10s infinite ease)
 			border-color #bbb
-			left 100px
+			left 120px
 			
 // landing
 
 section.info
-	background white
+	background #222
 	box-shadow 0 0 10px #999
 	h = 100vh
 	min = 112px
@@ -293,7 +293,7 @@ section.info
 		align center
 		margin 70px 50px 30px 50px
 		h3
-			color #555
+			color #fff
 			font-size: 24px
 			text-align center
 		p
@@ -306,7 +306,6 @@ section.info
 
 section.contacts
 	background #222
-	box-shadow 0 0 10px #999
 	min-height 100vh
 	.page-container
 		flex()
