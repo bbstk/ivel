@@ -80,6 +80,30 @@ transition(arg)
 			transform rotateZ(0deg)
 			transform-origin left
 
+@keyframes open-right
+	0%
+		left 100px
+	25%
+		left 140px
+	50%
+		left 140px
+	75% 
+		left 100px
+	100% 
+		left 100px
+
+@keyframes open-left
+	0%
+		left 50px
+	25%
+		left 10px
+	50%
+		left 10px
+	75% 
+		left 50px
+	100% 
+		left 50px
+
 // general
 	
 main
@@ -119,29 +143,42 @@ header
 			color #222
 			font title
 			font-weight bold
-			
+
+// drawings
+
 .barrier-container 
 	.barrier
 		height: 70px
+		margin-left -30px
 		position relative
 		.base
-			background darken(tomato, 20)
-			box-shadow -3px -3px 10px #888
+			background linear-gradient(90deg, darken(tomato, 25), darken(tomato, 20) 8px, tomato 25px, darken(tomato, 15) 30px, 30px, darken(tomato, 15))
+			box-shadow -3px -3px 7px #999
 			border-radius 5px 5px 0 0 
-			height 55px
+			height 60px
 			width 30px
+			position absolute
+			bottom 0
 		.moving
+			flex()
+			just-content center
+			align center
 			animation(open 20s infinite)
-			background pink
 			border-radius:  3px;
 			background: #ccc
 			box-shadow: 2px 2px 2px darken(#ccc, 60%);
-			height 10px
+			height 12px
 			width 120px
 
 			position absolute
-			top 6px;
-			left: 20px;
+			top 16px;
+			left: 16px;
+			.stripes
+				background red
+				// background linear-gradient(45 deg, red, red 10px, white 10px, white 20px, red 20px, red 30px, white 30px, white 40px, red 40px, red 50px, white 50px, white 60px)
+				background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,1) 10px, rgba(255,255,255,1) 21px);
+				height 6px
+				width 110px
 
 .camera-container
 	.circle
@@ -193,8 +230,50 @@ header
 					border-radius 50%
 					height 20px
 					width 20px
-
-// index.html
+					
+.door-container
+	.door
+		flex()
+		box-shadow -8px -8px 15px #ddd
+		height 70px
+		position relative
+		left 0
+		width 210px
+		.sensor
+			flex()
+			align center
+			just-content center
+			background #222
+			border-radius 0 0 9px 9px
+			height 6px
+			width 16px
+			position absolute
+			left 98px
+			top -8px
+		.el
+			background linear-gradient(45deg, #eee, white 25px, lighten(skyblue, 65%) 50px, white 70px)
+			height 70px
+			width 50px
+			border 5px solid #ccc
+			// border-image: linear-gradient(to top, #777, rgba(0, 0, 0, 0)) 1 100%;
+			
+			position absolute
+		.staying-left
+			background linear-gradient(45deg, lighten(skyblue, 20), white 30px, #ddd 40px, white 65px)
+			left 0
+		.moving-left
+			animation(open-left 10s infinite ease)
+			border-color #bbb
+			left 50px
+		.staying-right
+			background linear-gradient(45deg, lighten(skyblue, 20), white 30px, #ddd 40px, white 65px)
+			left 150px
+		.moving-right
+			animation(open-right 10s infinite ease)
+			border-color #bbb
+			left 100px
+			
+// landing
 
 section.info
 	background white
@@ -212,7 +291,7 @@ section.info
 		flex()
 		direction column
 		align center
-		margin 50px
+		margin 70px 50px 30px 50px
 		h3
 			color #555
 			font-size: 24px
@@ -238,8 +317,7 @@ section.contacts
 				color white
 				margin 40px 10px
 				span 
-					font-weight 700
-	
+					font-weight 700	
 
 section.request
 	border-box(50px)
@@ -288,6 +366,7 @@ section.request
 					margin 10px auto
 					width 100%
 			section
+				display block
 				margin 30px 0 0 0 
 				width 100%
 				button
@@ -305,7 +384,7 @@ section.request
 							box-shadow 0 0 10px darken(skyblue, 40)
 							border 1px solid darken(skyblue, 30)
 
-// add.html
+// add
 
 .add
 	background #222
